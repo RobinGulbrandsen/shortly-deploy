@@ -28,6 +28,11 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      js: {
+        files: {
+          'dist/built.js': ['dist/built.js']
+        }
+      }
     },
 
     eslint: {
