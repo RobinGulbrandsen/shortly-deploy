@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['public/client/*.js'],
-        dest: 'dist/built.js',
+        dest: 'public/dist/built.js',
       }
     },
 
@@ -30,14 +30,14 @@ module.exports = function(grunt) {
     uglify: {
       js: {
         files: {
-          'dist/built.js': ['dist/built.js']
+          'public/dist/built.js': ['public/dist/built.js']
         }
       }
     },
 
     eslint: {
       target: [
-        // Add list of files to lint here
+        'public/client/**/*.js'
       ]
     },
 
@@ -110,8 +110,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
+    'eslint',
     'gitpush:prodServer'
-    // add your deploy tasks here
   ]);
 
 
