@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var util = require('./lib/utility');
+var mongoose = require('mongoose');
 
 var handler = require('./lib/request-handler');
 
@@ -21,6 +22,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+//Add connection to database
+mongoose.connect('mongodb://localhost/shortly');
 
 app.get('/', util.checkUser, handler.renderIndex);
 app.get('/create', util.checkUser, handler.renderIndex);
