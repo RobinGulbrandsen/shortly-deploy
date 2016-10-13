@@ -1,7 +1,6 @@
 var crypto = require('crypto');
 var mongoose = require('mongoose');
 
-// vs. new Schema
 var linkSchema = mongoose.Schema({
   url: String,
   baseUrl: String,
