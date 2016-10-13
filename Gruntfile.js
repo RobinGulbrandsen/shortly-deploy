@@ -111,6 +111,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     'eslint',
+    'mochaTest',
     'gitpush:prodServer'
   ]);
 
