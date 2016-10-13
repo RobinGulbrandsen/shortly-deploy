@@ -109,11 +109,11 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('deploy', [
-    'eslint',
-    'mochaTest',
-    'gitpush:prodServer'
-  ]);
 
+  grunt.registerTask('deploy', function(n) {
+    if (grunt.option('prod')) {
+      grunt.task.run(['eslint', 'mochaTest', 'gitpush:prodServer']);
+    }
+  });
 
 };
