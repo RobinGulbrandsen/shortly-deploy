@@ -169,6 +169,7 @@ describe('', function() {
   }); // 'Privileged Access'
 
   describe('Account Creation:', function() {
+    this.timeout(3000);
 
     it('Signup creates a new user', function(done) {
       request(app)
@@ -205,6 +206,7 @@ describe('', function() {
   }); // 'Account Creation'
 
   describe('Account Login:', function() {
+    this.timeout(3000);
 
     beforeEach(function(done) {
       new User({
